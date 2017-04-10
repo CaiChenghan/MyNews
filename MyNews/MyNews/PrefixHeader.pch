@@ -1,0 +1,31 @@
+//
+//  PrefixHeader.pch
+//  MyNews
+//
+//  Created by 蔡成汉 on 2017/4/7.
+//  Copyright © 2017年 上海泰侠网络科技有限公司. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #import <Masonry/Masonry.h>
+    #import <MJRefresh/MJRefresh.h>
+    #import <Addition/AdditionFrameworks.h>
+    #import <AFNetworking/AFNetworking.h>
+    #import <SDWebImage/UIImageView+WebCache.h>
+    #import <CRToast/CRToast.h>
+    #import "Macro.h"
+    #import "MyNavigationController.h"
+    #import "BaseViewController.h"
+    #import "UITableViewCell+LayoutHeight.h"
+    #import "ConnectManager.h"
+#endif
+
+#endif /* PrefixHeader_pch */
