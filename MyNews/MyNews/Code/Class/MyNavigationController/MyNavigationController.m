@@ -18,6 +18,7 @@
     self = [super initWithRootViewController:rootViewController];
     if (self) {
         [self initialMyNavigationController];
+        self.viewControllers = @[rootViewController];
     }
     return self;
 }
@@ -55,6 +56,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+
+-(void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated{
+    [super pushViewController:viewController animated:animated];
+    viewController.hidesBottomBarWhenPushed = YES;
 }
 
 - (void)didReceiveMemoryWarning {
