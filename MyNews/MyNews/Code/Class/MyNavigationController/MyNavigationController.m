@@ -8,6 +8,7 @@
 
 #import "MyNavigationController.h"
 
+#define IOS7_SDK_AVAILABLE ([[[UIDevice currentDevice] systemVersion] intValue] >= 7)
 @interface MyNavigationController ()
 
 @end
@@ -15,7 +16,11 @@
 @implementation MyNavigationController
 
 -(instancetype)initWithRootViewController:(UIViewController *)rootViewController{
-    self = [super initWithRootViewController:rootViewController];
+    if (IOS7_SDK_AVAILABLE) {
+        self = [super initWithNavigationBarClass:[UINavigationBar class] toolbarClass:nil];
+    }else{
+        self = [super initWithRootViewController:rootViewController];
+    }
     if (self) {
         [self initialMyNavigationController];
         self.viewControllers = @[rootViewController];
